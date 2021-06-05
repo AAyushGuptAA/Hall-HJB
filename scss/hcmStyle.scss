@@ -1,0 +1,93 @@
+// sass --watch scss/hcmStyle.scss:css/hcmStyle.css
+@use './headerFooter';
+@use './general' as g;
+.btn-container {
+    margin: 1em auto 0;
+    max-width: max-content;
+    padding: 0 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75em;
+}
+
+.year {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: g.$linkColor;
+    padding: 0.5em 1.25em;
+    cursor: pointer;
+    background-color: g.$headBG-lg;
+    border: 3px solid g.$navLinkOutline;
+    border-radius: 6px;
+    &:hover {
+        background-color: g.$linkBackground;
+    }
+}
+
+.year.active {
+    background-color: g.$linkBackground;
+}
+
+.hcm-current {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 300px));
+    // increase the max-value if you want to show 3 or less cards in a row.
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.5em 2em;
+}
+
+.card {
+    box-shadow: 2px 2px 5px -1px gray;
+    border-radius: 6px;
+    text-align: center;
+    transition: transform 400ms;
+    overflow: hidden;
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+    &:hover {
+        transform: scale(1.01);
+    }
+}
+
+.card-content {
+    h2 {
+        word-spacing: 2px;
+        font-size: 1.7rem;
+        margin-bottom: 0.25em;
+    }
+    h3 {
+        color: lightseagreen;
+        font-size: 1.3rem;
+        margin-bottom: 0.25em;
+    }
+}
+
+.icons>ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.25em;
+    li {
+        background-color: rgba(gray, 0.25);
+        a {
+            display: block;
+            padding: 0.5em 1.5em;
+        }
+    }
+}
+
+@media (min-width: 32.5em) {
+    .card-content {
+        h2 {
+            font-size: 1.8rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+        }
+    }
+}

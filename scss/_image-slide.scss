@@ -1,0 +1,48 @@
+@keyframes image-fade {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.gallery {
+    display: grid;
+    // aspect-ratio: 3x2
+    grid-template-columns: minmax(auto, 450px);
+    grid-template-rows: 300px;
+    justify-content: center;
+    &>* {
+        display: none;
+        animation: image-fade 6s linear forwards;
+        // Keep animation time >= setinterval time.
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (min-width: 32.5em) {
+    // aspect-ratio: 14x9
+    .gallery {
+        grid-template-columns: minmax(auto, 700px);
+        grid-template-rows: 450px;
+    }
+}
+
+@media (min-width: 47.5em) {
+    // aspect-ratio: 5x3
+    .gallery {
+        grid-template-columns: minmax(auto, 1000px);
+        grid-template-rows: 600px;
+    }
+}

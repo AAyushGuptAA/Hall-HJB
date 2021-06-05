@@ -1,0 +1,89 @@
+// Hamburger container styling and hamburger hover styling.
+@use './general' as g;
+.ham {
+    // position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        transform: rotate(135deg);
+        transition: transform 1s;
+        .bars {
+            border-radius: 50px;
+        }
+        .bars::before {
+            border-radius: 50px;
+            transform: rotate(30deg) translate(8px);
+            width: 15px;
+            height: 2.5px;
+        }
+        .bars::after {
+            border-radius: 50px;
+            transform: rotate(150deg) translate(-8px);
+            width: 15px;
+            height: 2.5px;
+        }
+    }
+}
+
+// Creating Hamburger
+.bars {
+    // display: block; // If doing display: flex; in .ham, then there is no need of doing display: block; here.
+    position: relative;
+}
+
+.bars,
+.bars::before,
+.bars::after {
+    width: 20px;
+    height: 4px;
+    background-color: g.$linkColor;
+    transition: all 0.5s;
+}
+
+.bars::before,
+.bars::after {
+    content: '';
+    position: absolute;
+}
+
+.bars::before {
+    bottom: 8px;
+}
+
+.bars::after {
+    top: 8px;
+}
+
+// After click hamburger styling.
+.reverse {
+    transform: rotate(-45deg);
+    transition: transform 1s;
+    .bars {
+        border-radius: 50px;
+    }
+    .bars::before {
+        border-radius: 50px;
+        transform: rotate(30deg) translate(8px);
+        width: 15px;
+        height: 2.5px;
+    }
+    .bars::after {
+        border-radius: 50px;
+        transform: rotate(150deg) translate(-8px);
+        width: 15px;
+        height: 2.5px;
+    }
+}
+
+@media (min-width: 47.5em) {
+    .ham {
+        display: none;
+    }
+}

@@ -1,0 +1,76 @@
+// Full page navbar for medium screen devices.
+@use './general' as g;
+.nav-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scale(1);
+    transform-origin: top right;
+    transition: transform 0.3s;
+    background-color: g.$headBG-sm;
+    z-index: 2;
+    ul {
+        height: 100%;
+        list-style-type: none;
+        display: grid;
+        gap: 1em;
+        place-content: center;
+    }
+}
+
+.nav-page a {
+    display: block;
+    text-align: center;
+    padding: 1em 3em;
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: g.$linkColor;
+    white-space: nowrap;
+    transition: transform 200ms;
+    &:hover,
+    &:focus {
+        color: g.$navLinkOutline;
+        transform: scale(1.5);
+        transition: transform 400ms;
+    }
+}
+
+nav.toggle {
+    transform: scale(0);
+}
+
+@media (min-width: 47.5em) {
+    nav.toggle {
+        transform: scale(1);
+    }
+    .nav-page {
+        position: sticky; // For this to work, you've to take the nav outside the header. Search for more info.
+        left: auto; // Set to default
+        right: auto; // Set to default
+        bottom: auto; // Set to default, leave the z-index value as it was.
+        ul {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+        }
+        a {
+            padding: 0.5em 0;
+            outline: solid 0px g.$navLinkOutline;
+            &:hover,
+            &:focus {
+                background-color: g.$linkBackground;
+                transition: outline-width 200ms ease, outline-offset 200ms ease, color 200ms ease;
+                outline-offset: -4px;
+                outline-width: 3px;
+                transform: none;
+            }
+        }
+    }
+}
+
+// Problems:
+// 1. Hamburger not focusable on medium or small sized screen (but it doesn't matter on mobiles).
+// 2. Unable to remove hover styles, when hamburger is clicked (again it doesn't matter on mobiles).
+// 3. On middle or smaller screens, on opening navbar, element is allowed to scroll. While traverisng through tab, it scrolls after last link.
+// 4. On phones, in landscape mode, some links get cut.
