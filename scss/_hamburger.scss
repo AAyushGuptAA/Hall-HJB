@@ -1,10 +1,13 @@
-// Hamburger container styling and hamburger hover styling.
 @use './general' as g;
+// Hamburger container styling and hamburger hover styling.
 .ham {
-    // position: absolute;
+    position: fixed;
+    top: 2rem;
+    right: 3rem;
+    z-index: 20;
     height: 40px;
     width: 40px;
-    border-radius: 50%;
+    border-radius: 100%;
     background-color: white;
     display: flex;
     justify-content: center;

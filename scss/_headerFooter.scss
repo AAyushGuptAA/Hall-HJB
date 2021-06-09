@@ -31,10 +31,7 @@ h2 {
 header {
     position: sticky;
     top: 0;
-    z-index: 10;
-}
-
-.top-head {
+    z-index: 8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,12 +48,15 @@ header {
     }
 }
 
+.hide {
+    visibility: hidden;
+    transition: visibility 10ms 100ms;
+}
+
 .heading {
     flex-grow: 1;
     max-width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 }
 
 .heading>h1 {
@@ -166,7 +166,7 @@ textarea {
     h2 {
         font-size: g.$H2size--md;
     }
-    .top-head {
+    header {
         padding: 0.5em 1.5em;
     }
     .connect a {
@@ -182,20 +182,22 @@ textarea {
 }
 
 @media (min-width: 47.5em) {
-    header {
-        position: static;
-        .top-head {
-            background-color: g.$headBG-lg;
-        }
-    }
     h1 {
         font-size: g.$H1size--lg;
     }
     h2 {
         font-size: g.$H2size--lg;
     }
-    .top-head a {
-        height: auto;
+    header {
+        position: static;
+        background-color: g.$headBG-lg;
+        a {
+            height: auto;
+        }
+    }
+    .hide {
+        visibility: visible;
+        transition: visibility 10ms;
     }
     .heading {
         max-width: 60%;

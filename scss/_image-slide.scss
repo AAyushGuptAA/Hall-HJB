@@ -14,8 +14,11 @@
 }
 
 .gallery {
+    position: relative;
+    z-index: -99;
+    margin-top: 1.5em;
+    overflow: hidden;
     display: grid;
-    // aspect-ratio: 3x2
     grid-template-columns: minmax(auto, 450px);
     grid-template-rows: 300px;
     justify-content: center;
@@ -32,7 +35,6 @@
 }
 
 @media (min-width: 32.5em) {
-    // aspect-ratio: 14x9
     .gallery {
         grid-template-columns: minmax(auto, 700px);
         grid-template-rows: 450px;
@@ -40,8 +42,8 @@
 }
 
 @media (min-width: 47.5em) {
-    // aspect-ratio: 5x3
     .gallery {
+        margin-top: 4em;
         grid-template-columns: minmax(auto, 1000px);
         grid-template-rows: 600px;
     }

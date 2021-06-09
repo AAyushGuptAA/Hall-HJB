@@ -1,11 +1,6 @@
 // sass --watch scss/style.scss:css/style.css
 @use './headerFooter';
 @use './image-slide';
-.gallery {
-    margin-top: 1.5em;
-    overflow: hidden;
-}
-
 .message {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(auto, 330px));
