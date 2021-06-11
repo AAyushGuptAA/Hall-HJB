@@ -1,6 +1,7 @@
 @use './general' as g;
 // Full page navbar for medium screen devices.
 .navbar {
+    font-family: 'Stoke', serif;
     position: fixed;
     top: 0;
     width: 100%;
@@ -39,7 +40,6 @@
 }
 
 .drop {
-    position: relative;
     ul {
         max-height: 0;
         overflow: hidden;

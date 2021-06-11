@@ -1,6 +1,7 @@
 // sass --watch scss/style.scss:css/style.css
 @use './headerFooter';
 @use './image-slide';
+@use './general/' as g;
 .message {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(auto, 330px));
@@ -17,7 +18,7 @@
     overflow: hidden;
     img {
         object-fit: cover;
-        object-position: top;
+        object-position: center;
     }
     &:hover {
         transform: scale(1.01);
@@ -27,21 +28,21 @@
 .card-content {
     h2 {
         word-spacing: 2px;
-        font-size: 1.7rem;
+        font-size: g.$H2size--lg;
         margin-bottom: 0.25em;
     }
     h3 {
         color: lightseagreen;
-        font-size: 1.3rem;
+        font-size: g.$H2size--md;
         margin-bottom: 0.25em;
     }
     h4 {
-        font-size: 1.175rem;
+        font-size: g.$H2size--sm;
         word-spacing: 1.6px;
         margin-bottom: 0.25em;
     }
     p {
-        font-size: 1.05rem;
+        font-size: 0.95rem;
         line-height: 1.4;
         margin-bottom: 0.5em;
     }
@@ -76,28 +77,7 @@
             height: 100%;
         }
     }
-    .card-content {
-        h2 {
-            font-size: 1.8rem;
-        }
-        h3 {
-            font-size: 1.4rem;
-        }
-        h4 {
-            font-size: 1.2rem;
-        }
-    }
     .icons>ul {
-        list-style-type: none;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
         gap: 0.5em;
-        li {
-            background-color: rgba(gray, 0.25);
-            a {
-                display: block;
-                padding: 0.5em 1.5em;
-            }
-        }
     }
 }

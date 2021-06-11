@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Stoke&display=swap");
 .ham {
   position: fixed;
   top: 2rem;
@@ -85,6 +86,7 @@
   }
 }
 .navbar {
+  font-family: "Stoke", serif;
   position: fixed;
   top: 0;
   width: 100%;
@@ -121,9 +123,6 @@
   transition: transform 400ms;
 }
 
-.drop {
-  position: relative;
-}
 .drop ul {
   max-height: 0;
   overflow: hidden;
@@ -190,7 +189,14 @@ html,
 body {
   scroll-behavior: smooth;
   scroll-padding-top: 2.8rem;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Stoke", serif;
 }
 
 h1 {
@@ -250,9 +256,11 @@ main {
 }
 
 main > h1 {
-  font-style: oblique;
-  margin: 0.25em 0;
+  width: max-content;
+  margin: 0.5em auto;
   text-align: center;
+  letter-spacing: 1.6px;
+  text-shadow: -2px 2px 0 #89ebdc;
 }
 
 footer {
@@ -308,18 +316,22 @@ legend {
 }
 
 .form > * {
-  font-family: serif;
   font-size: 0.95rem;
   margin-top: 1em;
 }
 .form > *:not(button) {
-  display: flex;
-  gap: 0.25em;
+  vertical-align: baseline;
+}
+
+.form label {
+  display: inline-block;
+  width: 50px;
 }
 
 .form input,
 .form textarea {
-  padding: 0.25em;
+  width: 250px;
+  padding: 0.5em 0.75em;
 }
 
 textarea {
@@ -352,7 +364,7 @@ textarea {
   }
 
   .form > * {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
   }
 
   footer {
@@ -460,7 +472,7 @@ textarea {
 }
 .card img {
   object-fit: cover;
-  object-position: top;
+  object-position: center;
 }
 .card:hover {
   transform: scale(1.01);
@@ -468,21 +480,21 @@ textarea {
 
 .card-content h2 {
   word-spacing: 2px;
-  font-size: 1.7rem;
+  font-size: 1.75rem;
   margin-bottom: 0.25em;
 }
 .card-content h3 {
   color: lightseagreen;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   margin-bottom: 0.25em;
 }
 .card-content h4 {
-  font-size: 1.175rem;
+  font-size: 1rem;
   word-spacing: 1.6px;
   margin-bottom: 0.25em;
 }
 .card-content p {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   line-height: 1.4;
   margin-bottom: 0.5em;
 }
@@ -518,28 +530,8 @@ textarea {
     height: 100%;
   }
 
-  .card-content h2 {
-    font-size: 1.8rem;
-  }
-  .card-content h3 {
-    font-size: 1.4rem;
-  }
-  .card-content h4 {
-    font-size: 1.2rem;
-  }
-
   .icons > ul {
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 0.5em;
-  }
-  .icons > ul li {
-    background-color: rgba(128, 128, 128, 0.25);
-  }
-  .icons > ul li a {
-    display: block;
-    padding: 0.5em 1.5em;
   }
 }
 

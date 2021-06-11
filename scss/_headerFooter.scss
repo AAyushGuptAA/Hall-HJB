@@ -1,6 +1,7 @@
 @use './general' as g;
 @use './hamburger';
 @use './nav';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Stoke&display=swap');
 *,
 *::after,
 *::before {
@@ -12,8 +13,15 @@
 html,
 body {
     scroll-behavior: smooth;
-    scroll-padding-top: 2.8rem; // not responsive (e.g. test it on mobiles)
-    font-family: sans-serif;
+    scroll-padding-top: 2.8rem; // not dynamic (e.g. test it on mobiles)
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Stoke', serif;
 }
 
 h1 {
@@ -74,9 +82,12 @@ main {
 }
 
 main>h1 {
-    font-style: oblique;
-    margin: 0.25em 0;
+    // font-style: oblique;
+    width: max-content;
+    margin: 0.5em auto;
     text-align: center;
+    letter-spacing: 1.6px;
+    text-shadow: -2px 2px 0 g.$headBG-sm;
 }
 
 // Footer
@@ -133,18 +144,22 @@ legend {
 }
 
 .form>* {
-    font-family: serif;
     font-size: g.$H2size--sm - 0.05rem;
     margin-top: 1em;
     &:not(button) {
-        display: flex;
-        gap: 0.25em;
+        vertical-align: baseline;
     }
+}
+
+.form label {
+    display: inline-block;
+    width: 50px;
 }
 
 .form input,
 .form textarea {
-    padding: 0.25em;
+    width: 250px;
+    padding: 0.5em 0.75em;
 }
 
 textarea {
@@ -173,7 +188,7 @@ textarea {
         font-size: g.$H1size--md + 0.2rem;
     }
     .form>* {
-        font-size: g.$H2size--md - 0.25rem;
+        font-size: g.$H2size--md - 0.4rem;
     }
     footer {
         flex-direction: row;
