@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Stoke&display=swap");
 .ham {
+  position: fixed;
+  top: 2rem;
+  right: 3rem;
+  z-index: 20;
   height: 40px;
   width: 40px;
-  border-radius: 50%;
+  border-radius: 100%;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -80,66 +85,91 @@
     display: none;
   }
 }
-.nav-page {
+.navbar {
+  font-family: "Stoke", serif;
   position: fixed;
   top: 0;
-  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: grid;
+  justify-content: center;
+  gap: 1em;
+  list-style-type: none;
+  background-color: #89ebdc;
   transform: scale(1);
   transform-origin: top right;
   transition: transform 0.3s;
-  background-color: #89ebdc;
-  z-index: 2;
-}
-.nav-page ul {
-  list-style-type: none;
-  display: grid;
-  gap: 1em;
-  place-content: center;
 }
 
-.nav-page li {
-  font-size: 1.3rem;
-  color: pink;
+.navbar li {
+  cursor: pointer;
 }
 
-.nav-page a {
+.navbar a {
   display: block;
+  font-size: 1.3rem;
   text-align: center;
   padding: 1em 3em;
   text-decoration: none;
+  color: rgba(3, 84, 76, 0.7);
   white-space: nowrap;
   transition: transform 200ms;
 }
-.nav-page a:hover, .nav-page a:focus {
+.navbar a:hover, .navbar a:focus {
   color: #03544c;
-  transform: scale(1.5);
+  transform: scale(1.3);
   transition: transform 400ms;
 }
 
-nav.toggle {
+.drop ul {
+  max-height: 0;
+  overflow: hidden;
+  list-style-type: none;
+  border-radius: 10px;
+}
+
+.drop:hover ul,
+.drop:focus ul,
+.drop:focus-within ul {
+  max-height: max-content;
+  background-color: #32dcc3;
+}
+.drop:hover ul a,
+.drop:focus ul a,
+.drop:focus-within ul a {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar.toggle {
   transform: scale(0);
 }
 
 @media (min-width: 47.5em) {
-  nav.toggle {
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .navbar.toggle {
     transform: scale(1);
   }
 
-  .nav-page {
-    position: sticky;
-    left: auto;
-    right: auto;
-    bottom: auto;
-  }
-  .nav-page ul {
+  .navbar {
+    position: absolute;
+    height: auto;
+    overscroll-behavior: auto;
     grid-template-columns: repeat(5, 1fr);
     gap: 0;
   }
-  .nav-page a {
+  .navbar a {
     padding: 0.5em 0;
     outline: solid 0px #03544c;
   }
-  .nav-page a:hover, .nav-page a:focus {
+  .navbar a:hover, .navbar a:focus {
     background-color: #e5f6ec;
     transition: outline-width 200ms ease, outline-offset 200ms ease, color 200ms ease;
     outline-offset: -4px;
@@ -159,7 +189,14 @@ html,
 body {
   scroll-behavior: smooth;
   scroll-padding-top: 2.8rem;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Stoke", serif;
 }
 
 h1 {
@@ -177,10 +214,7 @@ h2 {
 header {
   position: sticky;
   top: 0;
-  z-index: 10;
-}
-
-.top-head {
+  z-index: 8;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,21 +222,24 @@ header {
   background-color: #89ebdc;
   box-shadow: 0 2px 3px -1px gray;
 }
-.top-head a {
+header a {
   height: 60px;
 }
-.top-head a img {
+header a img {
   width: 100%;
   height: 100%;
   max-height: 135px;
 }
 
+.hide {
+  visibility: hidden;
+  transition: visibility 10ms 100ms;
+}
+
 .heading {
   flex-grow: 1;
   max-width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .heading > h1 {
@@ -219,9 +256,11 @@ main {
 }
 
 main > h1 {
-  font-style: oblique;
-  margin: 0.25em 0;
+  width: max-content;
+  margin: 0.5em auto;
   text-align: center;
+  letter-spacing: 1.6px;
+  text-shadow: -2px 2px 0 #89ebdc;
 }
 
 footer {
@@ -266,8 +305,8 @@ footer {
 
 fieldset {
   width: max-content;
-  border-color: white;
-  border-width: 4px;
+  border-color: #03544c;
+  border-width: 3px;
   text-align: left;
   padding-left: 2em;
 }
@@ -277,18 +316,23 @@ legend {
 }
 
 .form > * {
-  font-family: serif;
   font-size: 0.95rem;
   margin-top: 1em;
 }
 .form > *:not(button) {
-  display: flex;
-  gap: 0.25em;
+  vertical-align: baseline;
+}
+
+.form label {
+  display: inline-block;
+  width: 50px;
 }
 
 .form input,
 .form textarea {
-  padding: 0.25em;
+  width: 250px;
+  padding: 0.5em;
+  border-style: hidden;
 }
 
 textarea {
@@ -297,9 +341,15 @@ textarea {
 
 .form button {
   cursor: pointer;
-  padding: 0.25em 0.75em;
-  font-size: 1.1rem;
+  padding: 0.5em 1.5em;
+  font-size: 1rem;
   border-radius: 0;
+  border: 2px solid #03544c;
+  color: #03544c;
+  background-color: #89ebdc;
+}
+.form button:hover, .form button:focus {
+  background-color: #e5f6ec;
 }
 
 @media (min-width: 32.5em) {
@@ -312,7 +362,7 @@ textarea {
     font-size: 1.35rem;
   }
 
-  .top-head {
+  header {
     padding: 0.5em 1.5em;
   }
 
@@ -321,7 +371,7 @@ textarea {
   }
 
   .form > * {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
   }
 
   footer {
@@ -330,13 +380,6 @@ textarea {
   }
 }
 @media (min-width: 47.5em) {
-  header {
-    position: static;
-  }
-  header .top-head {
-    background-color: rgba(137, 235, 220, 0.7);
-  }
-
   h1 {
     font-size: 2rem;
   }
@@ -345,8 +388,17 @@ textarea {
     font-size: 1.75rem;
   }
 
-  .top-head a {
+  header {
+    position: static;
+    background-color: rgba(137, 235, 220, 0.7);
+  }
+  header a {
     height: auto;
+  }
+
+  .hide {
+    visibility: visible;
+    transition: visibility 10ms;
   }
 
   .heading {
@@ -416,16 +468,19 @@ textarea {
   transform: scale(1.01);
 }
 
+.card-content {
+  height: 163px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .card-content h2 {
   word-spacing: 2px;
-  font-size: 1.7rem;
-  margin-bottom: 0.25em;
+  font-size: 1.75rem;
 }
 .card-content h3 {
   color: lightseagreen;
-  font-size: 1.3rem;
-  height: 52px;
-  margin-bottom: 0.25em;
+  font-size: 1.35rem;
 }
 
 .icons > ul {
@@ -440,15 +495,6 @@ textarea {
 .icons > ul li a {
   display: block;
   padding: 0.5em 1.5em;
-}
-
-@media (min-width: 32.5em) {
-  .card-content h2 {
-    font-size: 1.8rem;
-  }
-  .card-content h3 {
-    font-size: 1.4rem;
-  }
 }
 
 /*# sourceMappingURL=hcmStyle.css.map */

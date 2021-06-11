@@ -82,7 +82,6 @@ main {
 }
 
 main>h1 {
-    // font-style: oblique;
     width: max-content;
     margin: 0.5em auto;
     text-align: center;
@@ -133,8 +132,8 @@ footer {
 
 fieldset {
     width: max-content;
-    border-color: white;
-    border-width: 4px;
+    border-color: g.$navLinkOutline;
+    border-width: 3px;
     text-align: left;
     padding-left: 2em;
 }
@@ -159,7 +158,8 @@ legend {
 .form input,
 .form textarea {
     width: 250px;
-    padding: 0.5em 0.75em;
+    padding: 0.5em;
+    border-style: hidden;
 }
 
 textarea {
@@ -168,9 +168,16 @@ textarea {
 
 .form button {
     cursor: pointer;
-    padding: 0.25em 0.75em;
-    font-size: 1.1rem;
+    padding: 0.5em 1.5em;
+    font-size: g.$H2size--sm;
     border-radius: 0;
+    border: 2px solid g.$navLinkOutline;
+    color: g.$navLinkOutline;
+    background-color: g.$headBG-sm;
+    &:hover,
+    &:focus {
+        background-color: g.$linkBackground;
+    }
 }
 
 @media (min-width: 32.5em) {

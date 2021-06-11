@@ -56,16 +56,17 @@
 }
 
 .card-content {
+    height: 163px; // Important so that card-content has space to move.
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     h2 {
         word-spacing: 2px;
-        font-size: 1.7rem;
-        margin-bottom: 0.25em;
+        font-size: g.$H2size--lg;
     }
     h3 {
         color: lightseagreen;
-        font-size: 1.3rem;
-        height: 52px; // Important so that cards don't have white space at bottom.
-        margin-bottom: 0.25em;
+        font-size: g.$H2size--md;
     }
 }
 
@@ -79,17 +80,6 @@
         a {
             display: block;
             padding: 0.5em 1.5em;
-        }
-    }
-}
-
-@media (min-width: 32.5em) {
-    .card-content {
-        h2 {
-            font-size: 1.8rem;
-        }
-        h3 {
-            font-size: 1.4rem;
         }
     }
 }
