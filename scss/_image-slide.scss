@@ -43,7 +43,6 @@
 
 @media (min-width: 47.5em) {
     .gallery {
-        margin-top: 4em;
         grid-template-columns: minmax(auto, 1000px);
         grid-template-rows: 600px;
     }

@@ -18,10 +18,6 @@
     transition: transform 0.3s;
 }
 
-.navbar li {
-    cursor: pointer; // since href isn't given, it's necessary.
-}
-
 .navbar a {
     display: block;
     font-size: 1.3rem;
@@ -73,10 +69,11 @@
         transform: scale(1);
     }
     .navbar {
-        position: absolute;
+        position: static;
         height: auto;
         overscroll-behavior: auto;
-        grid-template-columns: repeat(5, 1fr);
+        overflow-y: visible;
+        grid-template-columns: 1fr minmax(200px, 1fr) minmax(220px, 1fr) minmax(140px, 1fr) 1fr;
         gap: 0;
         a {
             padding: 0.5em 0;
@@ -91,8 +88,11 @@
             }
         }
     }
+    .drop {
+        position: relative;
+    }
+    .drop ul {
+        position: absolute;
+        width: 100%;
+    }
 }
-
-// Problems:
-// 1. Hamburger not focusable on medium or small sized screen (but it doesn't matter on mobiles).
-// 2. Unable to remove hover styles, when hamburger is clicked (again it doesn't matter on mobiles).

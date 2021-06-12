@@ -103,10 +103,6 @@
   transition: transform 0.3s;
 }
 
-.navbar li {
-  cursor: pointer;
-}
-
 .navbar a {
   display: block;
   font-size: 1.3rem;
@@ -159,10 +155,11 @@
   }
 
   .navbar {
-    position: absolute;
+    position: static;
     height: auto;
     overscroll-behavior: auto;
-    grid-template-columns: repeat(5, 1fr);
+    overflow-y: visible;
+    grid-template-columns: 1fr minmax(200px, 1fr) minmax(220px, 1fr) minmax(140px, 1fr) 1fr;
     gap: 0;
   }
   .navbar a {
@@ -175,6 +172,15 @@
     outline-offset: -4px;
     outline-width: 3px;
     transform: none;
+  }
+
+  .drop {
+    position: relative;
+  }
+
+  .drop ul {
+    position: absolute;
+    width: 100%;
   }
 }
 *,
@@ -202,12 +208,12 @@ h4 {
 h1 {
   margin: 0;
   word-spacing: 2.5px;
-  font-size: 1.15rem;
+  font-size: 0.9rem;
   color: black;
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: black;
 }
 
@@ -226,9 +232,9 @@ header a {
   height: 60px;
 }
 header a img {
-  width: 100%;
   height: 100%;
   max-height: 135px;
+  max-width: 122px;
 }
 
 .hide {
@@ -286,7 +292,7 @@ footer {
 }
 .connect a {
   text-decoration: none;
-  font-size: 1.35rem;
+  font-size: 1.1rem;
 }
 .connect .fb {
   color: #0840bb;
@@ -303,6 +309,23 @@ footer {
   color: #1b7ca4;
 }
 
+.ext-links {
+  list-style-type: none;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  white-space: nowrap;
+}
+.ext-links a {
+  text-decoration: none;
+  color: #03544c;
+  font-size: 1rem;
+}
+.ext-links a:hover, .ext-links a:focus {
+  text-decoration: underline;
+}
+
 fieldset {
   width: max-content;
   border-color: #03544c;
@@ -316,11 +339,8 @@ legend {
 }
 
 .form > * {
-  font-size: 0.95rem;
+  font-size: 0.75rem;
   margin-top: 1em;
-}
-.form > *:not(button) {
-  vertical-align: baseline;
 }
 
 .form label {
@@ -337,12 +357,14 @@ legend {
 
 textarea {
   resize: none;
+  vertical-align: baseline;
 }
 
 .form button {
   cursor: pointer;
   padding: 0.5em 1.5em;
-  font-size: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
   border-radius: 0;
   border: 2px solid #03544c;
   color: #03544c;
@@ -354,12 +376,12 @@ textarea {
 
 @media (min-width: 32.5em) {
   h1 {
-    font-size: 1.7rem;
+    font-size: 1.375rem;
     word-spacing: 5px;
   }
 
   h2 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
 
   header {
@@ -367,25 +389,20 @@ textarea {
   }
 
   .connect a {
-    font-size: 1.9rem;
+    font-size: 1.575rem;
   }
 
   .form > * {
     font-size: 0.95rem;
   }
-
-  footer {
-    flex-direction: row;
-    justify-content: space-around;
-  }
 }
 @media (min-width: 47.5em) {
   h1 {
-    font-size: 2rem;
+    font-size: 1.65rem;
   }
 
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
   }
 
   header {
@@ -411,8 +428,13 @@ textarea {
     margin: 0.25em 0 0;
   }
 
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
   .connect a {
-    font-size: 2.2rem;
+    font-size: 1.85rem;
   }
 }
 main {
@@ -424,7 +446,7 @@ main div {
   padding: 2em;
   word-break: break-all;
   border: 2px solid rgba(3, 84, 76, 0.7);
-  position: relative;
+  box-shadow: 15px 15px rgba(3, 84, 76, 0.7);
 }
 main div + div {
   margin-top: 2em;
@@ -433,18 +455,6 @@ main div h1 {
   letter-spacing: 1.6px;
   text-shadow: -2px 2px 0 #89ebdc;
   margin-bottom: 0.5em;
-}
-main div::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-}
-main div::after {
-  bottom: 0px;
-  right: 0px;
-  box-shadow: 15px 15px rgba(3, 84, 76, 0.7);
-  width: 100%;
-  height: 100%;
 }
 
 /*# sourceMappingURL=memoriesStyle.css.map */

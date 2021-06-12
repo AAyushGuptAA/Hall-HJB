@@ -9,7 +9,7 @@ main {
         padding: 2em;
         word-break: break-all;
         border: 2px solid g.$linkColor;
-        position: relative;
+        box-shadow: 15px 15px g.$linkColor;
         &+div {
             margin-top: 2em;
         }
@@ -18,17 +18,5 @@ main {
             text-shadow: -2px 2px 0 g.$headBG-sm;
             margin-bottom: 0.5em;
         }
-    }
-    div::after {
-        content: '';
-        position: absolute;
-        pointer-events: none;
-    }
-    div::after {
-        bottom: 0px;
-        right: 0px;
-        box-shadow: 15px 15px g.$linkColor;
-        width: 100%;
-        height: 100%;
     }
 }

@@ -90,3 +90,7 @@
         display: none;
     }
 }
+
+// Problems:
+// 1. Hamburger not focusable on medium or small sized screen (but it doesn't matter on mobiles).
+// 2. Unable to remove hover styles, when hamburger is clicked (again it doesn't matter on mobiles).
