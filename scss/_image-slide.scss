@@ -16,7 +16,7 @@
 .gallery {
     position: relative;
     z-index: -99;
-    margin-top: 1.5em;
+    margin-top: 3em;
     overflow: hidden;
     display: grid;
     grid-template-columns: minmax(auto, 450px);
@@ -43,6 +43,7 @@
 
 @media (min-width: 47.5em) {
     .gallery {
+        margin-top: 1.5em;
         grid-template-columns: minmax(auto, 1000px);
         grid-template-rows: 600px;
     }

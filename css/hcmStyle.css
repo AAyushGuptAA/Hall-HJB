@@ -1,16 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Stoke&display=swap");
 .ham {
   position: fixed;
-  top: 2rem;
-  right: 3rem;
+  top: 4rem;
+  right: 0.85rem;
   z-index: 20;
   height: 40px;
   width: 40px;
   border-radius: 100%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: 0;
+  background-color: rgba(137, 235, 220, 0.7);
   cursor: pointer;
 }
 .ham:hover, .ham:focus {
@@ -34,7 +32,9 @@
 }
 
 .bars {
+  display: block;
   position: relative;
+  margin: 0 auto;
 }
 
 .bars,
@@ -50,6 +50,8 @@
 .bars::after {
   content: "";
   position: absolute;
+  left: 0;
+  right: 0;
 }
 
 .bars::before {
@@ -60,26 +62,37 @@
   top: 8px;
 }
 
-.reverse {
+.reverse,
+.reverse.ham:focus {
+  background-color: white;
   transform: rotate(-45deg);
   transition: transform 1s;
 }
-.reverse .bars {
+.reverse .bars,
+.reverse.ham:focus .bars {
   border-radius: 50px;
 }
-.reverse .bars::before {
+.reverse .bars::before,
+.reverse.ham:focus .bars::before {
   border-radius: 50px;
   transform: rotate(30deg) translate(8px);
   width: 15px;
   height: 2.5px;
 }
-.reverse .bars::after {
+.reverse .bars::after,
+.reverse.ham:focus .bars::after {
   border-radius: 50px;
   transform: rotate(150deg) translate(-8px);
   width: 15px;
   height: 2.5px;
 }
 
+@media (min-width: 32.5em) {
+  .ham {
+    top: 5.25rem;
+    right: 2.15rem;
+  }
+}
 @media (min-width: 47.5em) {
   .ham {
     display: none;
@@ -491,7 +504,7 @@ textarea {
 }
 
 .card-content {
-  height: 163px;
+  height: 145px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

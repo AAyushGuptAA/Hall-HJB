@@ -2,16 +2,14 @@
 // Hamburger container styling and hamburger hover styling.
 .ham {
     position: fixed;
-    top: 2rem;
-    right: 3rem;
+    top: 4rem;
+    right: 0.85rem;
     z-index: 20;
     height: 40px;
     width: 40px;
     border-radius: 100%;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border: 0;
+    background-color: g.$headBG-lg;
     cursor: pointer;
     &:hover,
     &:focus {
@@ -37,8 +35,9 @@
 
 // Creating Hamburger
 .bars {
-    // display: block; // If doing display: flex; in .ham, then there is no need of doing display: block; here.
+    display: block;
     position: relative;
+    margin: 0 auto;
 }
 
 .bars,
@@ -54,6 +53,8 @@
 .bars::after {
     content: '';
     position: absolute;
+    left: 0;
+    right: 0;
 }
 
 .bars::before {
@@ -65,7 +66,9 @@
 }
 
 // After click hamburger styling.
-.reverse {
+.reverse,
+.reverse.ham:focus {
+    background-color: white;
     transform: rotate(-45deg);
     transition: transform 1s;
     .bars {
@@ -85,6 +88,13 @@
     }
 }
 
+@media (min-width: 32.5em) {
+    .ham {
+        top: 5.25rem;
+        right: 2.15rem;
+    }
+}
+
 @media (min-width: 47.5em) {
     .ham {
         display: none;
@@ -92,5 +102,5 @@
 }
 
 // Problems:
-// 1. Hamburger not focusable on medium or small sized screen (but it doesn't matter on mobiles).
-// 2. Unable to remove hover styles, when hamburger is clicked (again it doesn't matter on mobiles).
+// 1. Unable to remove focus styles (automatically) from hamburger when navbar is closed.
+// 2. Links in navbar are focussable when navbar is closed. When navbar is opened, links outside the navbar are focussable (but it doesn't matter on smaller screens).

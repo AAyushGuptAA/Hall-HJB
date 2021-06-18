@@ -1,18 +1,3 @@
-// No need for the nav-bar in hcm-page
-// const toggler = document.querySelector('.ham');
-// const nav = document.querySelector('nav');
-// const anchors = document.querySelectorAll('a');
-// toggler.addEventListener('click', () => {
-//     nav.classList.toggle('toggle');
-//     toggler.classList.toggle('reverse');
-// })
-
-// anchors.forEach(a => {
-//     a.addEventListener('click', () => {
-//         nav.classList.toggle('toggle');
-//         toggler.classList.toggle('reverse');
-//     })
-// })
 const all_hcms = [{
     year: 21,
     imgSrc: "../assets/hcm21/aDeep.jpg",
@@ -61,6 +46,142 @@ const all_hcms = [{
     f_link: "https://www.facebook.com/tharun.naik.589",
     in_link: "https://www.linkedin.com/in/tharunnaik",
     email_link: "mailto:itistheinventor@gmail.com"
+}, {
+    year: 20,
+    imgSrc: "../assets/hcm20/aKaushal.jpeg",
+    name: "Abhishek Kaushal",
+    position: "Hall President",
+    f_link: "https://www.facebook.com/abhishek.kaushal.9256",
+    in_link: "#",
+    email_link: "mailto:abhishekkaushal98.ak@gmail.com"
+}, {
+    year: 20,
+    imgSrc: "../assets/hcm20/sBhattacharya.jpeg",
+    name: "Shubhram Bhattacharya",
+    position: "Second Senate Member",
+    f_link: "https://www.facebook.com/profile.php?id=100012719321826",
+    in_link: "#",
+    email_link: "mailto:shubh.bhatta@gmail.com"
+}, {
+    year: 20,
+    imgSrc: "../assets/hcm20/sTidke.jpg",
+    name: "Samadhan Tidke",
+    position: "General Secretary Social and Cultural",
+    f_link: "https://www.facebook.com/samadhan.tidke.10",
+    in_link: "https://www.linkedin.com/in/samadhan-tidke-1baa3a169",
+    email_link: "mailto:samadhantidke54@gmail.com"
+}, {
+    year: 20,
+    imgSrc: "../assets/hcm20/aDeep.jpg",
+    name: "Anubhav Deep",
+    position: "General Secretary Alumni Affairs",
+    f_link: "https://www.facebook.com/anubhav.deep1",
+    in_link: "https://www.linkedin.com/in/anubhav-deep",
+    email_link: "mailto:anubhavdeep.singh.karnal@gmail.com"
+}, {
+    year: 20,
+    imgSrc: "../assets/hcm20/nKumar.jpeg",
+    name: "Nishant Kumar",
+    position: "General Secretary Sports and Games",
+    f_link: "https://www.facebook.com/profile.php?id=100004672473599",
+    in_link: "#",
+    email_link: "#"
+}, {
+    year: 20,
+    imgSrc: "../assets/hcm20/sstJuluri.jpeg",
+    name: "Shree Shiva Teja Juluri",
+    position: "General Secretary Technology",
+    f_link: "https://www.facebook.com/profile.php?id=100017420234281",
+    in_link: "#",
+    email_link: "#"
+}, {
+    year: 20,
+    imgSrc: "../assets/hcm20/nRaj.jpeg",
+    name: "Nishchay Raj",
+    position: "General Secretary Student's Welfare",
+    f_link: "https://www.facebook.com/nischay.raj.7",
+    in_link: "#",
+    email_link: "#"
+}, {
+    year: 20,
+    imgSrc: "../assets/hcm20/vsRaj.jpeg",
+    name: "Varun Satya Raj",
+    position: "General Secretary Maintenance",
+    f_link: "https://www.facebook.com/varunsatyaraj.bavana.3",
+    in_link: "#",
+    email_link: "#"
+}, {
+    year: 20,
+    imgSrc: "../assets/hcm20/hVenkata.jpeg",
+    name: "Harshith Venkata",
+    position: "General Secretary Library and Gardening",
+    f_link: "https://www.facebook.com/profile.php?id=100009298481575",
+    in_link: "#",
+    email_link: "#"
+}, {
+    year: 19,
+    imgSrc: "../assets/hcm19/aGarg.jpg",
+    name: "Aman Garg",
+    position: "Hall President",
+    f_link: "https://www.facebook.com/aman.garg.37051",
+    in_link: "#",
+    email_link: "mailto:amangarg0212@gmail.com"
+}, {
+    year: 19,
+    imgSrc: "../assets/hcm19/sPise.jpg",
+    name: "Shivraj Pise",
+    position: "Second Senate Member",
+    f_link: "https://www.facebook.com/shivrajnpise",
+    in_link: "#",
+    email_link: "mailto:Shivrajpise@gmail.com"
+}, {
+    year: 19,
+    imgSrc: "../assets/hcm19/pSinha.jpg",
+    name: "Prithwi Sinha",
+    position: "General Secretary Technology",
+    f_link: "https://www.facebook.com/profile.php?id=100004609236252",
+    in_link: "#",
+    email_link: "mailto:sinhaprithwi@gmail.com"
+}, {
+    year: 19,
+    imgSrc: "../assets/hcm19/sBansal.jpg",
+    name: "Srijan Bansal",
+    position: "General Secretary Sports and Games",
+    f_link: "https://www.facebook.com/srijan.bansal.73",
+    in_link: "#",
+    email_link: "mailto:srijanbansal97@gmail.com"
+}, {
+    year: 19,
+    imgSrc: "../assets/hcm21/mGupta.jpg",
+    name: "Rupesh Patidar",
+    position: "General Secretary Social and Cultural",
+    f_link: "#",
+    in_link: "#",
+    email_link: "mailto:rupeshpatidar1697@gmail.com"
+}, {
+    year: 19,
+    imgSrc: "../assets/hcm19/rSharma.jpg",
+    name: "Rohit Sharma",
+    position: "General Secretary Maintenance",
+    f_link: "https://www.facebook.com/irohitsharma16",
+    in_link: "https://www.linkedin.com/in/tharunnaik",
+    email_link: "mailto:rohit161097@gmail.com"
+}, {
+    year: 19,
+    imgSrc: "../assets/hcm19/sBhattacharya.jpeg",
+    name: "Shubhram Bhattacharya",
+    position: "General Secretary Mess",
+    f_link: "https://www.facebook.com/profile.php?id=100012719321826",
+    in_link: "#",
+    email_link: "mailto:shubh.bhatta@gmail.com"
+}, {
+    year: 19,
+    imgSrc: "../assets/hcm19/aKaushal.jpeg",
+    name: "Abhishek Kaushal",
+    position: "General Secretary Student's Welfare",
+    f_link: "https://www.facebook.com/abhishek.kaushal.9256",
+    in_link: "#",
+    email_link: "mailto:abhishekkaushal98.ak@gmail.com"
 }];
 let currentYear = new Date();
 const hcmSection = document.querySelector('.hcm-current');
@@ -82,19 +203,24 @@ btns.forEach((btn, index) => {
 
 function get_HCMs(year = currentYear.getFullYear() % 100) {
     // filter the all_hcms, so as to get only HCM of year = year.
+    let year_hcm = all_hcms.filter(hcm => {
+        if (hcm.year === year) {
+            return hcm;
+        }
+    })
     const template = []
     let card = ``;
-    for (let i = 0; i < all_hcms.length; i++) {
+    for (let i = 0; i < year_hcm.length; i++) {
         card = `<div class="card">
-        <img src=${all_hcms[i].imgSrc} alt="">
+        <img src=${year_hcm[i].imgSrc} alt="">
         <div class="card-content">
-        <h2 class="name">${all_hcms[i].name}</h2>
-        <h3 class="position">${all_hcms[i].position}</h3>
+        <h2 class="name">${year_hcm[i].name}</h2>
+        <h3 class="position">${year_hcm[i].position}</h3>
         <div class="icons">
             <ul>
-                <li><a href=${all_hcms[i].f_link} target="_blank"><i class="bi bi-facebook"></i></a></li>
-                <li><a href=${all_hcms[i].in_link} target="_blank"><i class="bi bi-linkedin"></i></a></li>
-                <li><a href=${all_hcms[i].email_link} target="_blank"><i class="bi bi-envelope-fill"></i></a></li>
+                <li><a href=${year_hcm[i].f_link} target="_blank"><i class="bi bi-facebook"></i></a></li>
+                <li><a href=${year_hcm[i].in_link} target="_blank"><i class="bi bi-linkedin"></i></a></li>
+                <li><a href=${year_hcm[i].email_link} target="_blank"><i class="bi bi-envelope-fill"></i></a></li>
             </ul>
         </div>
         </div>
