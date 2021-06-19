@@ -12,7 +12,7 @@
     justify-content: center;
     gap: 1em;
     list-style-type: none;
-    background-color: g.$headBG-sm;
+    background-color: g.$navBG;
     transform: scale(1);
     transform-origin: top right;
     transition: transform 0.3s;
@@ -48,7 +48,7 @@
 .drop:focus ul,
 .drop:focus-within ul {
     max-height: max-content;
-    background-color: darken(g.$headBG-sm, 20%);
+    background-color: lighten(g.$navBG, 2.5%);
     a {
         padding-left: 0;
         padding-right: 0;
