@@ -11,20 +11,20 @@
   background-color: rgba(137, 235, 220, 0.7);
   cursor: pointer;
 }
-.ham:hover, .ham:focus {
+.ham:hover {
   transform: rotate(135deg);
   transition: transform 1s;
 }
-.ham:hover .bars, .ham:focus .bars {
+.ham:hover .bars {
   border-radius: 50px;
 }
-.ham:hover .bars::before, .ham:focus .bars::before {
+.ham:hover .bars::before {
   border-radius: 50px;
   transform: rotate(30deg) translate(8px);
   width: 15px;
   height: 2.5px;
 }
-.ham:hover .bars::after, .ham:focus .bars::after {
+.ham:hover .bars::after {
   border-radius: 50px;
   transform: rotate(150deg) translate(-8px);
   width: 15px;
@@ -172,7 +172,7 @@
     height: auto;
     overscroll-behavior: auto;
     overflow-y: visible;
-    grid-template-columns: 1fr minmax(200px, 1fr) minmax(220px, 1fr) minmax(140px, 1fr) 1fr;
+    grid-template-columns: minmax(200px, 1fr) minmax(220px, 1fr) minmax(140px, 1fr) 1fr;
     gap: 0;
   }
   .navbar a {

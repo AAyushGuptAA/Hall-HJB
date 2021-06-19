@@ -73,7 +73,7 @@
         height: auto;
         overscroll-behavior: auto;
         overflow-y: visible;
-        grid-template-columns: 1fr minmax(200px, 1fr) minmax(220px, 1fr) minmax(140px, 1fr) 1fr;
+        grid-template-columns: minmax(200px, 1fr) minmax(220px, 1fr) minmax(140px, 1fr) 1fr;
         gap: 0;
         a {
             padding: 0.5em 0;

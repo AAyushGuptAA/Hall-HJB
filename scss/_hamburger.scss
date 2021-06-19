@@ -11,8 +11,7 @@
     border: 0;
     background-color: g.$headBG-lg;
     cursor: pointer;
-    &:hover,
-    &:focus {
+    &:hover {
         transform: rotate(135deg);
         transition: transform 1s;
         .bars {
@@ -101,6 +100,5 @@
     }
 }
 
-// Problems:
-// 1. Unable to remove focus styles (automatically) from hamburger when navbar is closed.
-// 2. Links in navbar are focussable when navbar is closed. When navbar is opened, links outside the navbar are focussable (but it doesn't matter on smaller screens).
+// Problem:
+// 1. Links in navbar are focussable when navbar is closed. When navbar is opened, links outside the navbar are focussable (but it doesn't matter on smaller screens).

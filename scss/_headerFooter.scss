@@ -2,6 +2,7 @@
 @use './hamburger';
 @use './nav';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Stoke&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap');
 *,
 *::after,
 *::before {
@@ -22,6 +23,7 @@ h2,
 h3,
 h4 {
     font-family: 'Stoke', serif;
+    // font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
