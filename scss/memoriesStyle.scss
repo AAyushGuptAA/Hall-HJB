@@ -7,17 +7,20 @@ main {
         max-width: 1000px;
         margin: 0 auto;
         padding: 2em;
-        word-break: break-all;
         border: 2px solid g.$linkColor;
         box-shadow: 15px 15px g.$linkColor;
         &+div {
             margin-top: 2em;
         }
         h1 {
-            word-break: normal;
             letter-spacing: 1.6px;
-            text-shadow: -2px 2px 0 g.$headBG-sm;
-            margin-bottom: 0.5em;
+        }
+        a {
+            color: currentColor;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     }
 }

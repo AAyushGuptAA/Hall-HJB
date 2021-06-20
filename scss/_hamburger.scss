@@ -2,14 +2,14 @@
 // Hamburger container styling and hamburger hover styling.
 .ham {
     position: fixed;
-    top: 4rem;
-    right: 0.85rem;
+    top: 0.9rem;
+    right: 0.75rem;
     z-index: 20;
     height: 40px;
     width: 40px;
     border-radius: 100%;
     border: 0;
-    background-color: g.$headBG-lg;
+    background-color: g.$navBG;
     cursor: pointer;
     &:hover {
         transform: rotate(135deg);
@@ -87,13 +87,12 @@
     }
 }
 
-@media (min-width: 32.5em) {
-    .ham {
-        top: 5.25rem;
-        right: 2.15rem;
-    }
-}
-
+// @media (min-width: 32.5em) {
+//     .ham {
+//         top: 5.25rem;
+//         right: 2.15rem;
+//     }
+// }
 @media (min-width: 47.5em) {
     .ham {
         display: none;

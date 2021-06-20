@@ -3,7 +3,7 @@ const toggler = document.querySelector('.ham');
 const nav = document.querySelector('.navbar');
 const anchors = document.querySelectorAll('a');
 toggler.addEventListener('click', () => {
-    header.classList.toggle('hide');
+    // header.classList.toggle('hide');
     nav.classList.toggle('toggle');
     toggler.classList.toggle('reverse');
 })
@@ -11,17 +11,14 @@ toggler.addEventListener('click', () => {
 anchors.forEach(a => {
     a.addEventListener('click', () => {
         if (!a.parentElement.classList.contains('drop')) {
-            header.classList.toggle('hide');
+            // header.classList.toggle('hide');
             nav.classList.toggle('toggle');
             toggler.classList.toggle('reverse');
         }
     })
 })
 
-/* 
-    Problem with above code (although can be neglected):
-    When you click on link and resize to medium or smaller screens, navbar opens and hamburger has reverse class on it.
-*/
+
 // Image logic
 const imageContainers = document.querySelector('.gallery').children;
 imageContainers[0].style.display = 'block'

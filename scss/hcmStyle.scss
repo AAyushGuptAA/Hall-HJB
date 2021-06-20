@@ -17,7 +17,7 @@
     color: g.$linkColor;
     padding: 0.5em 1.25em;
     cursor: pointer;
-    background-color: g.$headBG-lg;
+    background-color: g.$navBG;
     border: 3px solid g.$navLinkOutline;
     border-radius: 6px;
     &:hover {
@@ -63,9 +63,11 @@
     h2 {
         word-spacing: 2px;
         font-size: g.$H2size--lg;
+        color: hsl(220, 50%, 35%);
+        text-shadow: 1px 1px 0 hsl(220, 50%, 35%);
     }
     h3 {
-        color: lightseagreen;
+        color: hsl(220, 50%, 40%);
         font-size: g.$H2size--md;
     }
 }
