@@ -1,3 +1,4 @@
 // It's generally helpful when you've so many general files that you want to use in many other (non-general) files.
 // Using this way, you don't have to write @use 'general-file-name' in each file. You only need to write @use 'general-folder-path'.
 @forward './variables';
+@forward './headerFooter';

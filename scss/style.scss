@@ -1,10 +1,12 @@
 // sass --watch scss/style.scss:css/style.css
-@use './headerFooter';
-@use './image-slide';
 @use './general/' as g;
+@use './hamburger';
+@use './nav';
+@use './image-slide';
 .centre-section {
+    padding: 0 1em 1em;
     .gallery {
-        width: clamp(355px, 65vw, 600px);
+        width: clamp(325px, 70vw, 700px);
         margin: 1em auto 1em;
     }
     .aboutHall h1 {
@@ -103,10 +105,11 @@
 @media (min-width: 47.5em) {
     .centre-section {
         display: grid;
-        grid-template-columns: minmax(auto, 600px) minmax(auto, 600px);
+        grid-template-columns: minmax(auto, 4fr) minmax(auto, 3fr); // possible grid-division: 2:1, 3:2, 4:3, 5:4, 6:5
         column-gap: 1em;
         justify-content: center;
         .gallery {
+            width: clamp(355px, 70vw, 100% - 1em); // subtract the space for gap
             margin-left: 1em;
         }
         .aboutHall {

@@ -1,0 +1,73 @@
+// sass --watch scss/compsStyle.scss:css/compsStyle.css
+@use './general/' as g;
+.container {
+    margin: 1em auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+    justify-content: center;
+}
+
+.accordian {
+    margin: 0 auto;
+    border: 2px solid g.$navBG;
+}
+
+.category {
+    background-color: lighten(g.$navBG, 20%);
+    overflow-y: hidden;
+    &+& {
+        border-top: 2px solid g.$navBG;
+    }
+    h3 {
+        padding: 0.25em 0.5em;
+        background-color: g.$navBG;
+        color: g.$linkColor;
+        text-shadow: -1px 1px 2px g.$heading;
+        cursor: pointer;
+        border-bottom: 2px solid darken(g.$navBG, 10%);
+    }
+    ul {
+        list-style-type: none;
+        max-height: 0;
+        transition: max-height 300ms cubic-bezier(.94, .24, 1, 1.5);
+    }
+    li {
+        display: flow-root;
+        padding: 0.25em;
+        background-color: lighten(g.$navBG, 20%);
+        color: g.$linkColor;
+        &+li {
+            border-top: 1px solid currentColor;
+        }
+        &:hover {
+            background-color: lighten(g.$navBG, 16%);
+        }
+        span {
+            float: right;
+            margin: auto calc(10px - 0.25em); // 10px - left-padding of li
+            padding: 1px 4px;
+            background-color: lighten(g.$navBG, 12%);
+            border-radius: 10px;
+        }
+    }
+}
+
+.category ul.active {
+    max-height: 400px; // any random enough bigger value.
+}
+
+.aside-news {
+    border: 2px solid currentColor;
+    height: 500px;
+    // margin: auto;
+}
+
+@media (min-width: 47.5em) {
+    .container {
+        margin-left: 3em;
+        margin-right: 3em;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}

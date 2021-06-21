@@ -1,13 +1,11 @@
-@use './general' as g;
-@use './hamburger';
-@use './nav';
+@use './variables' as v;
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Stoke&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap');
 *,
 *::after,
 *::before {
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -23,30 +21,37 @@ h2,
 h3,
 h4 {
     font-family: 'Stoke', serif;
-    // font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
     margin: 0;
-    word-spacing: g.$headingWordSpace--sm;
-    font-size: g.$H1size--sm;
-    color: g.$heading;
+    word-spacing: v.$headingWordSpace--sm;
+    font-size: v.$H1size--sm;
+    color: v.$heading;
 }
 
 h2 {
-    font-size: g.$H2size--sm;
-    color: g.$heading;
+    font-size: v.$H2size--sm;
+    color: v.$heading;
 }
 
 header {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 8;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 0 0.2em;
-    background-image: g.$headBG-sm;
+    background-image: v.$headBG-sm;
+    -webkit-box-shadow: 0 2px 3px -1px gray;
     box-shadow: 0 2px 3px -1px gray;
     a {
         height: 60px;
@@ -64,6 +69,8 @@ header {
 //     transition: visibility 10ms 100ms;
 // }
 .heading {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
     max-width: 75%;
     text-align: center;
@@ -84,22 +91,31 @@ main {
 }
 
 main h1 {
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
     margin: 0.5em auto;
     text-align: center;
     letter-spacing: 1.6px;
-    color: darken(g.$navBG, 15%);
-    text-shadow: -2px 2px 0 g.$heading;
+    color: darken(v.$navBG, 15%);
+    text-shadow: -2px 2px 0 v.$heading;
 }
 
 // Footer
 footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 0.5em;
     padding: 1em 0;
-    background-image: g.$headBG-sm;
+    background-image: v.$headBG-sm;
     text-align: center;
     color: white;
 }
@@ -111,13 +127,15 @@ footer {
 
 .connect {
     list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     &>* {
         margin: 0 auto;
     }
     a {
         text-decoration: none;
-        font-size: g.$H1size--sm + 0.2rem;
+        font-size: v.$H1size--sm + 0.2rem;
     }
     .fb {
         color: hsl(221, 100%, 45%);
@@ -145,7 +163,7 @@ footer {
     a {
         text-decoration: none;
         color: white;
-        font-size: g.$H1size--sm + 0.15rem;
+        font-size: v.$H1size--sm + 0.15rem;
         &:hover,
         &:focus {
             text-decoration: underline;
@@ -154,8 +172,10 @@ footer {
 }
 
 fieldset {
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
-    border-color: g.$navLinkOutline;
+    border-color: v.$navLinkOutline;
     border-width: 3px;
     text-align: left;
     padding-left: 1em;
@@ -164,12 +184,12 @@ fieldset {
 legend {
     padding: 0em 0.25em;
     h2 {
-        font-size: g.$H2size--md - 0.3rem;
+        font-size: v.$H2size--md - 0.3rem;
     }
 }
 
 .form>* {
-    font-size: g.$H2size--md - 0.3rem;
+    font-size: v.$H2size--md - 0.3rem;
     margin-top: 1em;
 }
 
@@ -193,43 +213,45 @@ textarea {
 .form button {
     cursor: pointer;
     padding: 0.5em 1.5em;
-    font-size: g.$H2size--sm;
+    font-size: v.$H2size--sm;
     font-weight: bold;
     border-radius: 0;
-    border: 2px solid g.$navLinkOutline;
-    color: g.$navLinkOutline;
+    border: 2px solid v.$navLinkOutline;
+    color: v.$navLinkOutline;
     background-color: darken(white, 10%);
     &:hover,
     &:focus {
-        background-color: g.$linkBackground;
+        background-color: v.$linkBackground;
     }
 }
 
 @media (min-width: 32.5em) {
     h1 {
-        font-size: g.$H1size--md;
-        word-spacing: g.$headingWordSpace--md;
+        font-size: v.$H1size--md;
+        word-spacing: v.$headingWordSpace--md;
     }
     h2,
     legend h2 {
-        font-size: g.$H2size--md;
+        font-size: v.$H2size--md;
     }
     header {
         padding: 0.5em 1.5em;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
     }
     .connect a {
-        font-size: g.$H1size--md + 0.2rem;
+        font-size: v.$H1size--md + 0.2rem;
     }
 }
 
 @media (min-width: 47.5em) {
     h1 {
-        font-size: g.$H1size--lg;
+        font-size: v.$H1size--lg;
     }
     h2,
     legend h2 {
-        font-size: g.$H2size--lg;
+        font-size: v.$H2size--lg;
     }
     header {
         position: static;
@@ -251,10 +273,14 @@ textarea {
         }
     }
     footer {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
+        -ms-flex-pack: distribute;
         justify-content: space-around;
     }
     .connect a {
-        font-size: g.$H1size--lg + 0.2rem;
+        font-size: v.$H1size--lg + 0.2rem;
     }
 }

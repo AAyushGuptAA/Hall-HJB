@@ -1,201 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Stoke&display=swap");
-.ham {
-  position: fixed;
-  top: 0.9rem;
-  right: 0.75rem;
-  z-index: 20;
-  height: 40px;
-  width: 40px;
-  border-radius: 100%;
-  border: 0;
-  background-color: #968fff;
-  cursor: pointer;
-}
-.ham:hover {
-  transform: rotate(135deg);
-  transition: transform 1s;
-}
-.ham:hover .bars {
-  border-radius: 50px;
-}
-.ham:hover .bars::before {
-  border-radius: 50px;
-  transform: rotate(30deg) translate(8px);
-  width: 15px;
-  height: 2.5px;
-}
-.ham:hover .bars::after {
-  border-radius: 50px;
-  transform: rotate(150deg) translate(-8px);
-  width: 15px;
-  height: 2.5px;
-}
-
-.bars {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-}
-
-.bars,
-.bars::before,
-.bars::after {
-  width: 20px;
-  height: 4px;
-  background-color: #003066;
-  transition: all 0.5s;
-}
-
-.bars::before,
-.bars::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-
-.bars::before {
-  bottom: 8px;
-}
-
-.bars::after {
-  top: 8px;
-}
-
-.reverse,
-.reverse.ham:focus {
-  background-color: white;
-  transform: rotate(-45deg);
-  transition: transform 1s;
-}
-.reverse .bars,
-.reverse.ham:focus .bars {
-  border-radius: 50px;
-}
-.reverse .bars::before,
-.reverse.ham:focus .bars::before {
-  border-radius: 50px;
-  transform: rotate(30deg) translate(8px);
-  width: 15px;
-  height: 2.5px;
-}
-.reverse .bars::after,
-.reverse.ham:focus .bars::after {
-  border-radius: 50px;
-  transform: rotate(150deg) translate(-8px);
-  width: 15px;
-  height: 2.5px;
-}
-
-@media (min-width: 47.5em) {
-  .ham {
-    display: none;
-  }
-}
-.navbar {
-  font-family: "Stoke", serif;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  display: grid;
-  justify-content: center;
-  gap: 1em;
-  list-style-type: none;
-  background-color: #968fff;
-  transform: scale(1);
-  transform-origin: top right;
-  transition: transform 0.3s;
-}
-
-.navbar a {
-  display: block;
-  font-size: 1.3rem;
-  text-align: center;
-  padding: 1em 3em;
-  text-decoration: none;
-  color: #003066;
-  white-space: nowrap;
-  transition: transform 200ms;
-}
-.navbar a:hover, .navbar a:focus {
-  color: #0053b3;
-  transform: scale(1.3);
-  transition: transform 400ms;
-}
-
-.drop ul {
-  max-height: 0;
-  overflow: hidden;
-  list-style-type: none;
-  border-radius: 0 0 10px 10px;
-}
-
-.drop:hover ul,
-.drop:focus ul,
-.drop:focus-within ul {
-  max-height: max-content;
-  background-color: #a29cff;
-}
-.drop:hover ul a,
-.drop:focus ul a,
-.drop:focus-within ul a {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.navbar.toggle {
-  transform: scale(0);
-}
-
-@media (min-width: 47.5em) {
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-
-  .navbar.toggle {
-    transform: scale(1);
-  }
-
-  .navbar {
-    position: static;
-    height: auto;
-    overscroll-behavior: auto;
-    overflow-y: visible;
-    grid-template-columns: minmax(200px, 1fr) minmax(220px, 1fr) minmax(140px, 1fr) 1fr;
-    gap: 0;
-  }
-  .navbar a {
-    padding: 0.5em 0;
-    outline: solid 0px #0053b3;
-  }
-  .navbar a:hover, .navbar a:focus {
-    background-color: white;
-    transition: outline-width 200ms ease, outline-offset 200ms ease, color 200ms ease;
-    outline-offset: -4px;
-    outline-width: 3px;
-    transform: none;
-  }
-
-  .drop {
-    position: relative;
-  }
-
-  .drop ul {
-    position: absolute;
-    width: 100%;
-  }
-}
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -226,14 +35,22 @@ h2 {
 }
 
 header {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 8;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 0 0.2em;
   background-image: linear-gradient(to left, #003c80, #4161a4, #968fff);
+  -webkit-box-shadow: 0 2px 3px -1px gray;
   box-shadow: 0 2px 3px -1px gray;
 }
 header a {
@@ -246,6 +63,8 @@ header a img {
 }
 
 .heading {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
   flex-grow: 1;
   max-width: 75%;
   text-align: center;
@@ -265,6 +84,8 @@ main {
 }
 
 main h1 {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   margin: 0.5em auto;
   text-align: center;
@@ -274,8 +95,15 @@ main h1 {
 }
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 0.5em;
   padding: 1em 0;
@@ -291,6 +119,8 @@ footer {
 
 .connect {
   list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .connect > * {
@@ -333,6 +163,8 @@ footer {
 }
 
 fieldset {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   border-color: #0053b3;
   border-width: 3px;
@@ -396,6 +228,8 @@ legend h2 {
 
   header {
     padding: 0.5em 1.5em;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
 
@@ -431,7 +265,11 @@ legend h2 {
   }
 
   footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-pack: distribute;
     justify-content: space-around;
   }
 
