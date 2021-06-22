@@ -59,20 +59,16 @@ header {
             // width: 100%;
             height: 100%;
             max-height: 135px;
-            max-width: 122px;
+            max-width: 135px;
         }
     }
 }
 
-// .hide {
-//     visibility: hidden;
-//     transition: visibility 10ms 100ms;
-// }
 .heading {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    max-width: 75%;
+    max-width: 72.5%;
     text-align: center;
 }
 
@@ -121,6 +117,7 @@ footer {
 }
 
 .reachus h2 {
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
     color: white;
     margin-bottom: 0.15em;
 }
@@ -135,7 +132,7 @@ footer {
     }
     a {
         text-decoration: none;
-        font-size: v.$H1size--sm + 0.2rem;
+        font-size: 1.8rem;
     }
     .fb {
         color: hsl(221, 100%, 45%);
@@ -163,7 +160,7 @@ footer {
     a {
         text-decoration: none;
         color: white;
-        font-size: v.$H1size--sm + 0.15rem;
+        font-size: 1.05rem;
         &:hover,
         &:focus {
             text-decoration: underline;
@@ -184,12 +181,12 @@ fieldset {
 legend {
     padding: 0em 0.25em;
     h2 {
-        font-size: v.$H2size--md - 0.3rem;
+        font-size: 1rem;
     }
 }
 
 .form>* {
-    font-size: v.$H2size--md - 0.3rem;
+    font-size: 0.9rem;
     margin-top: 1em;
 }
 
@@ -213,7 +210,6 @@ textarea {
 .form button {
     cursor: pointer;
     padding: 0.5em 1.5em;
-    font-size: v.$H2size--sm;
     font-weight: bold;
     border-radius: 0;
     border: 2px solid v.$navLinkOutline;
@@ -240,9 +236,6 @@ textarea {
         -ms-flex-pack: center;
         justify-content: center;
     }
-    .connect a {
-        font-size: v.$H1size--md + 0.2rem;
-    }
 }
 
 @media (min-width: 47.5em) {
@@ -259,10 +252,6 @@ textarea {
             height: auto;
         }
     }
-    // .hide {
-    //     visibility: visible;
-    //     transition: visibility 10ms;
-    // }
     .heading {
         max-width: 60%;
         h1 {
@@ -279,8 +268,5 @@ textarea {
         flex-direction: row;
         -ms-flex-pack: distribute;
         justify-content: space-around;
-    }
-    .connect a {
-        font-size: v.$H1size--lg + 0.2rem;
     }
 }

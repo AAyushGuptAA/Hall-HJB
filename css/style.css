@@ -25,12 +25,12 @@ h4 {
 h1 {
   margin: 0;
   word-spacing: 2.5px;
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 4vw, 1.5rem);
   color: #d7ddfe;
 }
 
 h2 {
-  font-size: 0.8rem;
+  font-size: clamp(0.8rem, 3.5vw, 1.4rem);
   color: #d7ddfe;
 }
 
@@ -59,14 +59,14 @@ header a {
 header a img {
   height: 100%;
   max-height: 135px;
-  max-width: 122px;
+  max-width: 135px;
 }
 
 .heading {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  max-width: 75%;
+  max-width: 72.5%;
   text-align: center;
 }
 
@@ -113,6 +113,7 @@ footer {
 }
 
 .reachus h2 {
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
   color: white;
   margin-bottom: 0.15em;
 }
@@ -128,7 +129,7 @@ footer {
 }
 .connect a {
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.8rem;
 }
 .connect .fb {
   color: #0049e6;
@@ -176,11 +177,11 @@ legend {
   padding: 0em 0.25em;
 }
 legend h2 {
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .form > * {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin-top: 1em;
 }
 
@@ -204,7 +205,6 @@ textarea {
 .form button {
   cursor: pointer;
   padding: 0.5em 1.5em;
-  font-size: 0.8rem;
   font-weight: bold;
   border-radius: 0;
   border: 2px solid #0053b3;
@@ -217,13 +217,13 @@ textarea {
 
 @media (min-width: 32.5em) {
   h1 {
-    font-size: 1.375rem;
+    font-size: clamp(1.275rem, 3.5vw, 1.7rem);
     word-spacing: 5px;
   }
 
   h2,
 legend h2 {
-    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 2.75vw, 1.675rem);
   }
 
   header {
@@ -232,19 +232,15 @@ legend h2 {
     -ms-flex-pack: center;
     justify-content: center;
   }
-
-  .connect a {
-    font-size: 1.575rem;
-  }
 }
 @media (min-width: 47.5em) {
   h1 {
-    font-size: 1.65rem;
+    font-size: clamp(1.625rem, 3vw, 2rem);
   }
 
   h2,
 legend h2 {
-    font-size: 1.55rem;
+    font-size: clamp(1.55rem, 2.65vw, 1.75rem);
   }
 
   header {
@@ -272,15 +268,11 @@ legend h2 {
     -ms-flex-pack: distribute;
     justify-content: space-around;
   }
-
-  .connect a {
-    font-size: 1.85rem;
-  }
 }
 .ham {
   position: fixed;
-  top: 0.9rem;
-  right: 0.75rem;
+  top: 0.7rem;
+  right: 0.7rem;
   z-index: 20;
   height: 40px;
   width: 40px;
@@ -365,6 +357,12 @@ legend h2 {
   height: 2.5px;
 }
 
+@media (min-width: 32.5em) {
+  .ham {
+    top: 1.25rem;
+    right: 1rem;
+  }
+}
 @media (min-width: 47.5em) {
   .ham {
     display: none;
@@ -429,6 +427,10 @@ legend h2 {
   transform: scale(0);
 }
 
+.navbar-open {
+  overflow: hidden;
+}
+
 @media (min-width: 47.5em) {
   nav {
     position: sticky;
@@ -438,6 +440,10 @@ legend h2 {
 
   .navbar.toggle {
     transform: scale(1);
+  }
+
+  .navbar-open {
+    overflow: auto;
   }
 
   .navbar {
@@ -503,7 +509,15 @@ legend h2 {
 }
 .centre-section .aboutHall h1 {
   width: auto;
-  font-size: 1.75rem;
+  font-size: 1.8rem;
+}
+.centre-section .aboutHall h1::before {
+  content: open-quote;
+  font-size: larger;
+}
+.centre-section .aboutHall h1::after {
+  content: close-quote;
+  font-size: larger;
 }
 
 .message-container {
@@ -514,6 +528,7 @@ legend h2 {
   overflow-x: clip;
 }
 .message-container h1 {
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
   color: white;
   text-shadow: -1px 1px 2px #d7ddfe;
 }
@@ -554,7 +569,7 @@ legend h2 {
 
 .card-content h2 {
   word-spacing: 2px;
-  font-size: 1.55rem;
+  font-size: clamp(1.55rem, 2.65vw, 1.75rem);
   margin-bottom: 0.25em;
   color: #2d4a86;
 }

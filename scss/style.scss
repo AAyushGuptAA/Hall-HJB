@@ -11,7 +11,15 @@
     }
     .aboutHall h1 {
         width: auto;
-        font-size: 1.75rem;
+        font-size: 1.8rem;
+        &::before {
+            content: open-quote;
+            font-size: larger;
+        }
+        &::after {
+            content: close-quote;
+            font-size: larger;
+        }
     }
 }
 
@@ -22,6 +30,7 @@
     z-index: 1;
     overflow-x: clip;
     h1 {
+        font-size: clamp(1.5rem, 3vw, 1.8rem);
         color: white;
         text-shadow: -1px 1px 2px g.$heading;
     }
@@ -71,12 +80,12 @@
     }
     h3 {
         color: hsl(220, 50%, 40%);
-        font-size: g.$H2size--md;
+        font-size: 1.25rem;
         margin-bottom: 0.25em;
     }
     h4 {
         color: hsl(220, 50%, 52%);
-        font-size: g.$H2size--sm + 0.15rem;
+        font-size: 0.95rem;
         word-spacing: 1.6px;
         margin-bottom: 0.25em;
     }

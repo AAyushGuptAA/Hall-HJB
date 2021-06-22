@@ -4,11 +4,11 @@ $navBG: hsl(244, 100%, 78%);
 $linkColor: hsl(212, 100%, 20%);
 $linkBackground: hsl(0, 90%, 100%);
 $navLinkOutline: hsl(212, 100%, 35%);
-$H1size--sm: 0.9rem; // 1.45rem
-$H1size--md: 1.375rem; // 1.8rem
-$H1size--lg: 1.65rem;
-$H2size--sm: 0.8rem; // 1.15rem
-$H2size--md: 1.25rem;
-$H2size--lg: 1.55rem;
+$H1size--sm: clamp(0.9rem, 4vw, 1.5rem);
+$H1size--md: clamp(1.275rem, 3.5vw, 1.7rem);
+$H1size--lg: clamp(1.625rem, 3vw, 2rem);
+$H2size--sm: clamp(0.8rem, 3.5vw, 1.4rem);
+$H2size--md: clamp(1.25rem, 2.75vw, 1.675rem);
+$H2size--lg: clamp(1.55rem, 2.65vw, 1.75rem);
 $headingWordSpace--sm: 2.5px;
 $headingWordSpace--md: 5px;

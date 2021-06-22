@@ -1,4 +1,4 @@
-@use './general' as g;
+@use './general/variables' as g;
 // Full page navbar for medium screen devices.
 .navbar {
     font-family: 'Stoke', serif;
@@ -60,6 +60,11 @@
     transform: scale(0);
 }
 
+// for body.
+.navbar-open {
+    overflow: hidden;
+}
+
 @media (min-width: 47.5em) {
     nav {
         position: sticky;
@@ -68,6 +73,9 @@
     }
     .navbar.toggle {
         transform: scale(1);
+    }
+    .navbar-open {
+        overflow: auto;
     }
     .navbar {
         position: static;
