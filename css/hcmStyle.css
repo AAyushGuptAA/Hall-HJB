@@ -105,6 +105,8 @@ footer {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 0.5em;
   padding: 1em 0;
   background-image: linear-gradient(to left, #003c80, #4161a4, #968fff);
@@ -213,6 +215,10 @@ textarea {
 }
 .form button:hover, .form button:focus {
   background-color: white;
+}
+
+.copy {
+  width: 100vw;
 }
 
 @media (min-width: 32.5em) {

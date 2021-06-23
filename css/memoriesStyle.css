@@ -105,6 +105,8 @@ footer {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 0.5em;
   padding: 1em 0;
   background-image: linear-gradient(to left, #003c80, #4161a4, #968fff);
@@ -215,6 +217,10 @@ textarea {
   background-color: white;
 }
 
+.copy {
+  width: 100vw;
+}
+
 @media (min-width: 32.5em) {
   h1 {
     font-size: clamp(1.275rem, 3.5vw, 1.7rem);
@@ -272,25 +278,74 @@ legend h2 {
 main {
   padding: calc(1em + 15px);
 }
-main div {
+main .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2em;
   border: 2px solid #003066;
   box-shadow: 15px 15px #003066;
 }
-main div + div {
+main .container h1 {
+  width: auto;
+  letter-spacing: 1.6px;
+  cursor: pointer;
+}
+main .container h1:hover,
+main .container h1:focus {
+  text-decoration: underline;
+}
+
+.container + .container {
   margin-top: 2em;
 }
-main div h1 {
-  letter-spacing: 1.6px;
+
+.modal-open {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  align-items: center;
+  justify-content: center;
 }
-main div a {
-  color: currentColor;
-  text-decoration: none;
+.modal-open .more {
+  display: block;
+  font-size: 1.5rem;
+  color: #e6e6e6;
+  margin: 0 auto;
+  padding: 0.75em 2.5em;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-main div a:hover {
-  text-decoration: underline;
+.modal-open .bi {
+  position: fixed;
+  top: 1.75rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: #e6e6e6;
+  cursor: pointer;
+}
+
+.modal-images {
+  display: grid;
+  grid-template-columns: minmax(auto, 600px);
+  gap: 1em;
+}
+.modal-images img {
+  max-width: 100%;
+}
+
+@media (min-width: 47.5em) {
+  .modal-images {
+    grid-template-columns: repeat(3, minmax(auto, 600px));
+  }
 }
 
 /*# sourceMappingURL=memoriesStyle.css.map */

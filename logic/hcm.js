@@ -214,6 +214,12 @@ btns.forEach((btn, index) => {
         let tenure = e.currentTarget.innerHTML;
         let year = parseInt(tenure.slice(tenure.length - 2));
         hcmSection.innerHTML = get_HCMs(year);
+        let anchors = [...document.querySelectorAll('a')];
+        invalid_a = anchors.filter(a => a.getAttribute('href') === "#");
+        invalid_a.forEach(a => {
+            a.style.visibility = "hidden";
+            a.parentElement.style.cursor = 'not-allowed';
+        });
     });
 })
 
@@ -234,9 +240,9 @@ function get_HCMs(year = currentYear.getFullYear() % 100) {
         <h3 class="position">${year_hcm[i].position}</h3>
         <div class="icons">
             <ul>
-                <li><a href=${year_hcm[i].f_link} target="_blank"><i class="bi bi-facebook"></i></a></li>
-                <li><a href=${year_hcm[i].in_link} target="_blank"><i class="bi bi-linkedin"></i></a></li>
-                <li><a href=${year_hcm[i].email_link} target="_blank"><i class="bi bi-envelope-fill"></i></a></li>
+                <li><a href=${year_hcm[i].f_link} target=${year_hcm[i].f_link !== '#'?"_blank":""}><i class="bi bi-facebook"></i></a></li>
+                <li><a href=${year_hcm[i].in_link} target=${year_hcm[i].in_link !== '#'?"_blank":""}><i class="bi bi-linkedin"></i></a></li>
+                <li><a href=${year_hcm[i].email_link} target=${year_hcm[i].email_link !== '#'?"_blank":""}><i class="bi bi-envelope-fill"></i></a></li>
             </ul>
         </div>
         </div>

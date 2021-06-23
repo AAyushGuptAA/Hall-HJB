@@ -1,7 +1,7 @@
 // sass --watch scss/compsStyle.scss:css/compsStyle.css
 @use './general/' as g;
 .container {
-    margin: 1em auto;
+    margin: 1em 2em;
     display: grid;
     grid-template-columns: 1fr;
     gap: 2em;
@@ -9,7 +9,6 @@
 }
 
 .accordian {
-    margin: 0 auto;
     border: 2px solid g.$navBG;
 }
 
@@ -54,20 +53,19 @@
 }
 
 .category ul.active {
-    max-height: 400px; // any random enough bigger value.
+    max-height: 500px; // any random enough bigger value.
 }
 
 .aside-news {
     border: 2px solid currentColor;
     height: 500px;
-    // margin: auto;
 }
 
 @media (min-width: 47.5em) {
     .container {
-        margin-left: 3em;
-        margin-right: 3em;
-        grid-template-columns: 1fr 1fr;
+        margin-left: 6em;
+        margin-right: 6em;
+        grid-template-columns: minmax(max-content, 600px) minmax(auto, 400px);
         align-items: start;
     }
 }

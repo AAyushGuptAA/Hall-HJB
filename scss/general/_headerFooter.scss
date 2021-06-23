@@ -109,6 +109,8 @@ footer {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     gap: 0.5em;
     padding: 1em 0;
     background-image: v.$headBG-sm;
@@ -219,6 +221,10 @@ textarea {
     &:focus {
         background-color: v.$linkBackground;
     }
+}
+
+.copy {
+    width: 100vw;
 }
 
 @media (min-width: 32.5em) {

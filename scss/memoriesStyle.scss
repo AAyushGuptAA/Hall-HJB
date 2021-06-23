@@ -2,24 +2,73 @@
 @use './general' as g;
 main {
     padding: calc(1em + 15px); // 1em + box-shadow offset.
-    div {
+    .container {
         max-width: 1000px;
         margin: 0 auto;
         padding: 2em;
         border: 2px solid g.$linkColor;
         box-shadow: 15px 15px g.$linkColor;
-        &+div {
-            margin-top: 2em;
-        }
         h1 {
+            width: auto;
             letter-spacing: 1.6px;
+            cursor: pointer;
         }
-        a {
-            color: currentColor;
-            text-decoration: none;
-        }
-        a:hover {
+        h1:hover,
+        h1:focus {
             text-decoration: underline;
         }
+    }
+}
+
+.container+.container {
+    margin-top: 2em;
+}
+
+.modal-open {
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background-color: hsla(0, 0%, 0%, 0.75);
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+    align-items: center;
+    justify-content: center;
+    .more {
+        display: block;
+        font-size: 1.5rem;
+        color: hsl(0, 0%, 90%);
+        margin: 0 auto;
+        padding: 0.75em 2.5em;
+        background-color: hsla(0, 0%, 0%, 0.5);
+    }
+    .bi {
+        position: fixed;
+        top: 1.75rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        color: hsl(0, 0%, 90%);
+        cursor: pointer;
+    }
+}
+
+.modal-images {
+    display: grid;
+    grid-template-columns: minmax(auto, 600px);
+    gap: 1em;
+    img {
+        max-width: 100%;
+    }
+}
+
+@media (min-width:47.5em) {
+    .modal-images {
+        grid-template-columns: repeat(3, minmax(auto, 600px));
     }
 }

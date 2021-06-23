@@ -25,12 +25,12 @@ h4 {
 h1 {
   margin: 0;
   word-spacing: 2.5px;
-  font-size: 0.9rem;
+  font-size: clamp(0.9rem, 4vw, 1.5rem);
   color: #d7ddfe;
 }
 
 h2 {
-  font-size: 0.8rem;
+  font-size: clamp(0.8rem, 3.5vw, 1.4rem);
   color: #d7ddfe;
 }
 
@@ -59,14 +59,14 @@ header a {
 header a img {
   height: 100%;
   max-height: 135px;
-  max-width: 122px;
+  max-width: 135px;
 }
 
 .heading {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  max-width: 75%;
+  max-width: 72.5%;
   text-align: center;
 }
 
@@ -105,6 +105,8 @@ footer {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 0.5em;
   padding: 1em 0;
   background-image: linear-gradient(to left, #003c80, #4161a4, #968fff);
@@ -113,6 +115,7 @@ footer {
 }
 
 .reachus h2 {
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
   color: white;
   margin-bottom: 0.15em;
 }
@@ -128,7 +131,7 @@ footer {
 }
 .connect a {
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.8rem;
 }
 .connect .fb {
   color: #0049e6;
@@ -176,11 +179,11 @@ legend {
   padding: 0em 0.25em;
 }
 legend h2 {
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .form > * {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin-top: 1em;
 }
 
@@ -204,7 +207,6 @@ textarea {
 .form button {
   cursor: pointer;
   padding: 0.5em 1.5em;
-  font-size: 0.8rem;
   font-weight: bold;
   border-radius: 0;
   border: 2px solid #0053b3;
@@ -215,15 +217,19 @@ textarea {
   background-color: white;
 }
 
+.copy {
+  width: 100vw;
+}
+
 @media (min-width: 32.5em) {
   h1 {
-    font-size: 1.375rem;
+    font-size: clamp(1.275rem, 3.5vw, 1.7rem);
     word-spacing: 5px;
   }
 
   h2,
 legend h2 {
-    font-size: 1.25rem;
+    font-size: clamp(1.25rem, 2.75vw, 1.675rem);
   }
 
   header {
@@ -232,19 +238,15 @@ legend h2 {
     -ms-flex-pack: center;
     justify-content: center;
   }
-
-  .connect a {
-    font-size: 1.575rem;
-  }
 }
 @media (min-width: 47.5em) {
   h1 {
-    font-size: 1.65rem;
+    font-size: clamp(1.625rem, 3vw, 2rem);
   }
 
   h2,
 legend h2 {
-    font-size: 1.55rem;
+    font-size: clamp(1.55rem, 2.65vw, 1.75rem);
   }
 
   header {
@@ -272,13 +274,9 @@ legend h2 {
     -ms-flex-pack: distribute;
     justify-content: space-around;
   }
-
-  .connect a {
-    font-size: 1.85rem;
-  }
 }
 .container {
-  margin: 1em auto;
+  margin: 1em 2em;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2em;
@@ -286,7 +284,6 @@ legend h2 {
 }
 
 .accordian {
-  margin: 0 auto;
   border: 2px solid #968fff;
 }
 
@@ -331,7 +328,7 @@ legend h2 {
 }
 
 .category ul.active {
-  max-height: 400px;
+  max-height: 500px;
 }
 
 .aside-news {
@@ -341,9 +338,9 @@ legend h2 {
 
 @media (min-width: 47.5em) {
   .container {
-    margin-left: 3em;
-    margin-right: 3em;
-    grid-template-columns: 1fr 1fr;
+    margin-left: 6em;
+    margin-right: 6em;
+    grid-template-columns: minmax(max-content, 600px) minmax(auto, 400px);
     align-items: start;
   }
 }
