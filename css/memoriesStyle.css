@@ -333,6 +333,11 @@ main .container h1:focus {
   cursor: pointer;
 }
 
+.modal-content,
+.modal-close {
+  display: none;
+}
+
 .modal-images {
   display: grid;
   grid-template-columns: minmax(auto, 600px);

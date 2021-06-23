@@ -58,6 +58,11 @@ main {
     }
 }
 
+.modal-content,
+.modal-close {
+    display: none;
+}
+
 .modal-images {
     display: grid;
     grid-template-columns: minmax(auto, 600px);
