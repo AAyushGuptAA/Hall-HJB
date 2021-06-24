@@ -1,4 +1,4 @@
-// sass --watch scss/style.scss:css/style.css
+// sass --watch --style compressed scss/style.scss:css/style.css
 @use './general/' as g;
 @use './hamburger';
 @use './nav';

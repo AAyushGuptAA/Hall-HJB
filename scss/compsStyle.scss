@@ -1,4 +1,4 @@
-// sass --watch scss/compsStyle.scss:css/compsStyle.css
+// sass --watch --style compressed scss/compsStyle.scss:css/compsStyle.css
 @use './general/' as g;
 .container {
     margin: 1em 2em;

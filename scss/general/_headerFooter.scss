@@ -1,5 +1,4 @@
 @use './variables' as v;
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Stoke&display=swap');
 *,
 *::after,
 *::before {
@@ -51,8 +50,8 @@ header {
     align-items: center;
     padding: 0 0.2em;
     background-image: v.$headBG-sm;
-    -webkit-box-shadow: 0 2px 3px -1px gray;
-    box-shadow: 0 2px 3px -1px gray;
+    -webkit-box-shadow: 0 2px 3px -1px v.$linkColor;
+    box-shadow: 0 2px 3px -1px v.$linkColor;
     a {
         height: 60px;
         img {

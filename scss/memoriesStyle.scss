@@ -1,4 +1,4 @@
-// sass --watch scss/memoriesStyle.scss:css/memoriesStyle.css
+// sass --watch --style compressed scss/memoriesStyle.scss:css/memoriesStyle.css
 @use './general' as g;
 main {
     padding: calc(1em + 15px); // 1em + box-shadow offset.
@@ -40,6 +40,9 @@ main {
     gap: 0.75em;
     align-items: center;
     justify-content: center;
+    transform: scale(1);
+    transform-origin: bottom;
+    transition: transform 200ms ease-out;
     .more {
         display: block;
         font-size: 1.5rem;
@@ -58,9 +61,12 @@ main {
     }
 }
 
-.modal-content,
-.modal-close {
+.modal-content {
     display: none;
+}
+
+.modal-close {
+    transform: scale(0);
 }
 
 .modal-images {

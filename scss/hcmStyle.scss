@@ -1,4 +1,4 @@
-// sass --watch scss/hcmStyle.scss:css/hcmStyle.css
+// sass --watch --style compressed scss/hcmStyle.scss:css/hcmStyle.css
 @use './general' as g;
 .btn-container {
     margin: 1em auto 0;
