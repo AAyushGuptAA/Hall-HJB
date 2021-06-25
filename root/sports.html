@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="../css/compsStyle.css">
     <style>
-        .category h3 {
+        .container h3 {
             cursor: auto;
         }
     </style>
@@ -23,14 +23,29 @@
 
 <body>
     <header>
-        <a href="http://iitkgp.ac.in" target="_blank" rel="noopener"><img src="../assets/IITKGP-logo.png" alt="Logo of IIT Kharagpur"></a>
+        <a href="index.html"><img src="../assets/HJB-logo.png" alt="Logo of HJB Hall"></a>
         <div class="heading">
             <h1 class="title">HOMI JEHANGIR BHABHA</h1>
             <h2 class="subtitle">HALL OF RESIDENCE</h2>
         </div>
-        <a href="index.html"><img src="../assets/HJB-logo.png" alt="Logo of HJB Hall"></a>
     </header>
+    <nav>
+        <button type="button" class="ham"><span class="bars"></span></button>
+        <ul class="navbar toggle">
+            <li><a href="./index.html#know">Know Your Hall</a></li>
+            <li class="drop"><a href="#">Competitions</a>
+                <ul>
+                    <li><a href="socult.html">Social & Cultural</a></li>
+                    <li><a href="tech.html">Technology</a></li>
+                    <li><a href="sports.html">Sports & Games</a></li>
+                </ul>
+            </li>
+            <li><a href="memories.html">Memories</a></li>
+            <li><a href="hcm-page.html">HCM</a></li>
+        </ul>
+    </nav>
     <main>
+        <div class="rules"><a href="https://drive.google.com/file/d/1q6fiVehAZo6BAFTekXzkj8RUUvp1oFNO/view?usp=sharing" target="_blank" rel="noopener">Rulebook&nbsp;&nbsp;<i class="bi bi-box-arrow-up-right"></i></a></div>
         <div class="container">
             <div class="accordian">
                 <div class="category">
@@ -98,7 +113,17 @@
                     <h3>BASKETBALL</h3>
                 </div>
             </div>
-            <div class="aside-news"></div>
+            <div class="aside">
+                <div class="recent-news">
+                    <h3>Recent News</h3>
+                    <ul>
+                        <li>Recent news 1</li>
+                        <li>Recent news 2</li>
+                        <li>Recent news 3</li>
+                    </ul>
+                </div>
+                <p>Google form: <a href="#" target="_blank" rel="noopener">Fill the form to take part</a>!</p>
+            </div>
         </div>
     </main>
     <footer>
@@ -131,7 +156,7 @@
                 </div>
             </fieldset>
         </form>
-        <p class="copy">&copy; Created by HJB Web Development Team</p>
+        <p class="copy">&copy; Created and maintained by HJB Web Development Team</p>
     </footer>
     <!-- <script src="../logic/comps.js"></script> -->
 </body>

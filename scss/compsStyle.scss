@@ -1,11 +1,43 @@
 // sass --watch --style compressed scss/compsStyle.scss:css/compsStyle.css
 @use './general/' as g;
+@use './hamburger';
+@use './nav';
+.rules {
+    width: max-content;
+    margin-left: auto;
+    background-image: g.$headBG-sm;
+    background-size: 225%;
+    background-position: right;
+    padding: 0.75em 2em;
+    border-bottom-left-radius: 20px;
+    a {
+        color: g.$linkBackground;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
 .container {
     margin: 1em 2em;
     display: grid;
     grid-template-columns: 1fr;
     gap: 2em;
     justify-content: center;
+    h3 {
+        color: g.$linkColor;
+        padding: 0.25em 0.5em;
+        background-color: lighten(g.$navBG, 16%);
+    }
+    ul {
+        list-style-type: none;
+    }
+    li {
+        padding: 0.25em;
+        background-color: lighten(g.$navBG, 20%);
+        color: g.$linkColor;
+    }
 }
 
 .accordian {
@@ -19,36 +51,20 @@
         border-top: 2px solid g.$navBG;
     }
     h3 {
-        padding: 0.25em 0.5em;
         background-color: g.$navBG;
-        color: g.$linkColor;
         text-shadow: -1px 1px 2px g.$heading;
         cursor: pointer;
         border-bottom: 2px solid darken(g.$navBG, 10%);
     }
     ul {
-        list-style-type: none;
         max-height: 0;
         transition: max-height 300ms cubic-bezier(.94, .24, 1, 1.5);
     }
-    li {
-        display: flow-root;
-        padding: 0.25em;
-        background-color: lighten(g.$navBG, 20%);
-        color: g.$linkColor;
-        &+li {
-            border-top: 1px solid currentColor;
-        }
-        &:hover {
-            background-color: lighten(g.$navBG, 16%);
-        }
-        span {
-            float: right;
-            margin: auto calc(10px - 0.25em); // 10px - left-padding of li
-            padding: 1px 4px;
-            background-color: lighten(g.$navBG, 12%);
-            border-radius: 10px;
-        }
+    li+li {
+        border-top: 1px solid currentColor;
+    }
+    li:hover {
+        background-color: lighten(g.$navBG, 16%);
     }
 }
 
@@ -56,16 +72,30 @@
     max-height: 550px; // any random enough bigger value.
 }
 
-.aside-news {
-    border: 2px solid currentColor;
-    height: 500px;
+.aside .recent-news {
+    height: 300px;
+}
+
+.aside p {
+    padding-left: 0.25em;
+    margin-top: 1em;
+    color: g.$linkColor;
 }
 
 @media (min-width: 47.5em) {
+    .rules {
+        background-image: none;
+        background-color: g.$navBG;
+        a {
+            color: g.$linkColor;
+            font-size: large;
+        }
+    }
     .container {
         margin-left: 6em;
         margin-right: 6em;
-        grid-template-columns: minmax(max-content, 600px) minmax(auto, 400px);
+        grid-template-columns: minmax(max-content, 650px) minmax(auto, 450px);
         align-items: start;
+        justify-content: space-around;
     }
 }

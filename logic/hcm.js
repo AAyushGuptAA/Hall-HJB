@@ -160,7 +160,7 @@ const all_hcms = [{
     email_link: "mailto:srijanbansal97@gmail.com"
 }, {
     year: 19,
-    imgSrc: "../assets/dummy_male.jpg",
+    imgSrc: "../assets/hcm19/rPatidar.jpeg",
     name: "Rupesh Patidar",
     position: "General Secretary Social and Cultural",
     f_link: "#",
