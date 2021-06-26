@@ -76,10 +76,31 @@
     height: 300px;
 }
 
-.aside p {
-    padding-left: 0.25em;
-    margin-top: 1em;
+.aside .contact-form {
+    background-color: lighten(g.$navBG, 20%);
+    text-align: center;
     color: g.$linkColor;
+    min-width: max-content;
+    h3 {
+        text-align: left;
+    }
+    p {
+        padding-left: 0.25em;
+        margin: 0.5em auto;
+    }
+    a {
+        display: inline-block;
+        border: 1px solid currentColor;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    a:hover,
+    a:focus {
+        color: lighten(g.$navBG, 20%);
+        background-color: g.$linkColor;
+    }
 }
 
 @media (min-width: 47.5em) {
