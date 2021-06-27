@@ -15,6 +15,9 @@
         referrerpolicy="no-referrer" onload="this.rel='stylesheet'" />
     <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="../css/style.css">
+    <script>
+        let submitted = false;
+    </script>
 </head>
 
 <body>
@@ -132,7 +135,8 @@
             <li><a href="hcm-page.html">HCM</a></li>
             <li><a href="sports.html">Sports & Games</a></li>
         </ul>
-        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdCW54wndSY26ziQjFaD-43MmENeZHMAla64jOGgoozxv1CZg/formResponse" method="POST">
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='./index.html';}"></iframe>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdCW54wndSY26ziQjFaD-43MmENeZHMAla64jOGgoozxv1CZg/formResponse" method="POST" target="hidden_iframe" autocomplete="off">
             <fieldset>
                 <legend>
                     <h2>Have a query?</h2>

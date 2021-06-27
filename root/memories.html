@@ -15,6 +15,9 @@
         referrerpolicy="no-referrer" onload="this.rel='stylesheet'" />
     <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="../css/memoriesStyle.css">
+    <script>
+        let submitted = false;
+    </script>
 </head>
 
 <body>
@@ -111,15 +114,16 @@
             <li><a href="hcm-page.html">HCM</a></li>
             <li><a href="sports.html">Sports & Games</a></li>
         </ul>
-        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdCW54wndSY26ziQjFaD-43MmENeZHMAla64jOGgoozxv1CZg/formResponse" method="POST">
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='./memories.html';}"></iframe>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdCW54wndSY26ziQjFaD-43MmENeZHMAla64jOGgoozxv1CZg/formResponse" method="POST" target="hidden_iframe" autocomplete="off">
             <fieldset>
                 <legend>
                     <h2>Have a query?</h2>
                 </legend>
                 <div class="form">
-                    <label for="name">Name:</label><input type="name" name="name" id="name" placeholder="..." required><br>
-                    <label for="email">Email:</label><input type="email" name="email" id="email" required><br>
-                    <label for="query">Query:</label><textarea name="query" cols="20" rows="2" id="query" placeholder="" required></textarea><br>
+                    <label for="name">Name:</label><input type="name" name="entry.447630515" id="name" placeholder="..." required><br>
+                    <label for="email">Email:</label><input type="email" name="entry.1076765972" id="email" required><br>
+                    <label for="query">Query:</label><textarea name="entry.287433083" cols="20" rows="2" id="query" placeholder="" required></textarea><br>
                     <button type="submit">Submit</button>
                 </div>
             </fieldset>
@@ -127,6 +131,7 @@
         <p class="copy">&copy; Created and maintained by HJB Web Development Team</p>
     </footer>
     <script src="../logic/memo.js"></script>
+    <script src="../logic/form.js"></script>
 </body>
 
 </html>
