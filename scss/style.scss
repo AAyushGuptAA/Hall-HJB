@@ -9,19 +9,33 @@
         width: clamp(325px, 70vw, 700px);
         margin: 1em auto 1em;
     }
-    .aboutHall h1 {
-        width: auto;
-        font-size: 1.8rem;
-        &::before {
-            content: open-quote;
-            font-size: larger;
+    .aboutHall {
+        h1 {
+            width: auto;
+            font-size: 1.8rem;
+            &::before {
+                content: open-quote;
+                font-size: larger;
+            }
+            &::after {
+                content: close-quote;
+                font-size: larger;
+            }
         }
-        &::after {
-            content: close-quote;
-            font-size: larger;
+        p {
+            font-size: 0.95rem;
+            text-align: justify;
+            font-style: italic;
+            color: hsl(220, 50%, 50%);
+            &:last-child {
+                text-align: right;
+                font-style: normal;
+            }
+        }
+        p+p {
+            margin-top: 1em;
         }
     }
-    // .aboutHall p{}
 }
 
 .message-container {
@@ -115,17 +129,21 @@
 @media (min-width: 47.5em) {
     .centre-section {
         display: grid;
-        grid-template-columns: minmax(auto, 4fr) minmax(auto, 3fr); // possible grid-division: 2:1, 3:2, 4:3, 5:4, 6:5
+        grid-template-columns: minmax(auto, 4fr) minmax(330px, 3fr); // possible grid-division: 2:1, 3:2, 4:3, 5:4, 6:5
         column-gap: 1em;
         justify-content: center;
+        padding-left: 2em;
+        padding-right: 2em;
         .gallery {
-            width: clamp(355px, 70vw, 100% - 1em); // subtract the space for gap
-            margin-left: 1em;
+            width: clamp(355px, 70vw, 100%); // subtract the space for gap
         }
         .aboutHall {
-            align-self: center;
+            align-self: baseline;
             h1 {
                 font-size: 2rem;
+            }
+            p {
+                font-size: large;
             }
         }
     }

@@ -11,7 +11,7 @@
 html,
 body {
     scroll-behavior: smooth;
-    scroll-padding-top: 2.8rem; // not dynamic (e.g. test it on mobiles)
+    scroll-padding-top: 4rem;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -242,6 +242,10 @@ textarea {
 }
 
 @media (min-width: 47.5em) {
+    html,
+    body {
+        scroll-padding-top: 2.8rem;
+    }
     h1 {
         font-size: v.$H1size--lg;
     }
