@@ -1,5 +1,5 @@
 # Hall-HJB
-This is the website I created, of my hall Homi Jehanghir Bhabha Hall of residence, IIT Kharagpur. Project is still in development.
+This is the website I created, of my hall Homi Jehanghir Bhabha Hall of residence, IIT Kharagpur. Website is hosted at https://hjb-iitkgp.github.io/official/ 
 ## Clone the repository
 ```
 git clone https://github.com/AAyushGuptAA/Hall-HJB.git
